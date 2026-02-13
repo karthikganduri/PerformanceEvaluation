@@ -1,0 +1,23 @@
+[project]
+name = "llm-performance-evaluator"
+version = "0.1.0"
+description = "Benchmark OpenAI-compatible model endpoints for TTFT, OTPS, latency, and reasoning timing."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=1.60.0",
+  "tiktoken>=0.7.0",
+]
+
+[project.scripts]
+llm-perf-eval = "perf_eval.cli:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
